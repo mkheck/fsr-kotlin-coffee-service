@@ -19,7 +19,9 @@ import reactor.core.publisher.Mono
 import reactor.test.StepVerifier
 
 @RunWith(SpringRunner::class)
-@WebFluxTest(*arrayOf(CoffeeService::class, CoffeeController::class))
+// MAH: comment appropriate line to use idiomatic Kotlin functional routing or MVC style routing
+//@WebFluxTest(*arrayOf(CoffeeService::class, CoffeeController::class))
+@WebFluxTest(*arrayOf(CoffeeService::class, RouteConfig::class))
 class ExternalAPITest {
     @Autowired
     lateinit var client: WebTestClient

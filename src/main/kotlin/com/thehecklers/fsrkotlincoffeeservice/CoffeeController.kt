@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
-@RestController
-@RequestMapping("/coffees")
+// MAH: comment out to use idiomatic Kotlin functional routing as defined in RouteConfig (either/or)
+//@RestController
+//@RequestMapping("/coffees")
 class CoffeeController(private val service: CoffeeService) {
     @GetMapping
     fun all() = service.getAllCoffees()
