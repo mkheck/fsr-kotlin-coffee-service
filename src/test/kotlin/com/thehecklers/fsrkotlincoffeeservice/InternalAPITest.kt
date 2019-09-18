@@ -49,7 +49,7 @@ class InternalAPITest {
 
     @Test
     fun `Get Coffee Orders, Take 10, verify`() {
-        StepVerifier.withVirtualTime { service.getOrdersForCoffeeById(coffee1.id!!) }
+        StepVerifier.withVirtualTime { service.getOrdersForCoffeeById(coffee1.id!!).take(10) }
                 .thenAwait(Duration.ofHours(10))
                 .expectNextCount(10)
                 .verifyComplete()
